@@ -1,14 +1,15 @@
 {
     "name": "thefredfox/cakephp-ip-type",
     "description": "IpType plugin for CakePHP",
+    "homepage": "http://github.com/thefredfox/cakephp-ip-type",
     "type": "cakephp-plugin",
+    "license": "MIT",
     "keywords": [
         "cakephp",
         "ip",
         "type",
         "database"
     ],
-    "homepage": "http://github.com/thefredfox/cakephp-ip-type",
     "authors": [
         {
             "name": "TheFRedFox",
