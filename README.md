@@ -23,5 +23,18 @@ Plugin::load('IpType');
 Type::map('ip', 'IpType\Database\Type\IpType');
 ```
 
+In the Table class itself you have to tell the column to be this type:
+
+``` php
+// in your Entity Table class (eg. UsersTable)
+
+use Cake\Database\Schema\Table as Schema;
+
+protected function _initializeSchema(Schema $schema) {
+    $schema->columnType('ip', 'ip');
+    return $schema;
+}
+```
+
 ## Database
 The final converted value for the database is meant to be stored as a LOB value. I used a VARBINARY with 16 bytes. It is long enough for also IPv6 addresses.
