@@ -1,5 +1,5 @@
 {
-    "name": "thefredfox/IpType",
+    "name": "thefredfox/cakephp-ip-type",
     "description": "IpType plugin for CakePHP",
     "type": "cakephp-plugin",
     "require": {
