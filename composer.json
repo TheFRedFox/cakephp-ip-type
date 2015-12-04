@@ -2,12 +2,23 @@
     "name": "thefredfox/cakephp-ip-type",
     "description": "IpType plugin for CakePHP",
     "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp",
+        "ip",
+        "type",
+        "database"
+    ],
+    "homepage": "http://github.com/thefredfox/cakephp-ip-type",
+    "authors": [
+        {
+            "name": "TheFRedFox",
+            "email": "thefredfox@googlemail.com",
+            "role": "Maintainer"
+        }
+    ],
     "require": {
         "php": ">=5.4.16",
         "cakephp/cakephp": "~3.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "*"
     },
     "autoload": {
         "psr-4": {
