@@ -12,13 +12,13 @@ You can install this plugin into your CakePHP application using [composer](http:
 
 The recommended way to install composer packages is:
 
-```
+``` php
 composer require thefredfox/cakephp-ip-type
 ```
 
 After that you have to load the plugin in your application's bootstrap file and map the type for the database as follows:
 
-```
+``` php
 Plugin::load('IpType');
 Type::map('ip', 'IpType\Database\Type\IpType');
 ```
