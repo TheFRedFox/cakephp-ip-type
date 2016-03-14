@@ -21,6 +21,10 @@ use PDO;
 class IpType extends Type
 {
 
+    public $_encode = 'inet_pton';
+
+    public $_decode = 'inet_ntop';
+
     /**
      * {@inheritdoc}
      *
@@ -32,12 +36,15 @@ class IpType extends Type
      */
     public function toPHP($value, Driver $driver)
     {
-        if ($value === null)
-        {
+        if ($value === null) {
             return null;
         }
 
-        return inet_ntop($value);
+        if (!is_callable($this->_decode)) {
+            throw new \UnexpectedValueException('Could not decode the value, IpType::_decode has to be a callable.');
+        }
+
+        return call_user_func($this->_decode, $value);
     }
 
     /**
@@ -63,12 +70,15 @@ class IpType extends Type
      */
     public function toDatabase($value, Driver $driver)
     {
-        if ($value === null)
-        {
+        if ($value === null) {
             return null;
         }
 
-        return inet_pton($value);
+        if (!is_callable($this->_encode)) {
+            throw new \UnexpectedValueException('Could not encode the value, IpType::_encode has to be a callable.');
+        }
+
+        return call_user_func($this->_encode, $value);
     }
 
     /**
@@ -81,8 +91,7 @@ class IpType extends Type
      */
     public function toStatement($value, Driver $driver)
     {
-        if ($value === null)
-        {
+        if ($value === null) {
             return PDO::PARAM_NULL;
         }
 
