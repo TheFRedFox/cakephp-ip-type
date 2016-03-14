@@ -13,7 +13,7 @@ use TestApp\Model\Table\IpsTable;
  *
  * @property IpsTable Ips
  */
-class IpsTestCase extends TestCase
+class IpTypeTestCase extends TestCase
 {
 
     public $fixtures = ['plugin.ip_type.ips'];
