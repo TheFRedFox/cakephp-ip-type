@@ -188,7 +188,7 @@ class IpsTestCase extends TestCase
         try {
             $this->Ips->find()->all()->toArray();
         } catch (\Exception $e) {
-            $this->assertTrue($e instanceof \InvalidArgumentException);
+            $this->assertTrue($e instanceof \UnexpectedValueException);
             return;
         }
 

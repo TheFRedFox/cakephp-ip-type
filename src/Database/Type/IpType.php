@@ -41,7 +41,7 @@ class IpType extends Type
         }
 
         if (!is_callable($this->_decode)) {
-            throw new \InvalidArgumentException('Could not decode the value, IpType::_decode has to be a callable.');
+            throw new \UnexpectedValueException('Could not decode the value, IpType::_decode has to be a callable.');
         }
 
         return call_user_func($this->_decode, $value);
@@ -75,7 +75,7 @@ class IpType extends Type
         }
 
         if (!is_callable($this->_encode)) {
-            throw new \InvalidArgumentException('Could not encode the value, IpType::_encode has to be a callable.');
+            throw new \UnexpectedValueException('Could not encode the value, IpType::_encode has to be a callable.');
         }
 
         return call_user_func($this->_encode, $value);
